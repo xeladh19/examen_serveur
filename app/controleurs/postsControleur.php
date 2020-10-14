@@ -17,13 +17,23 @@ function indexAction (\PDO $connexion) {
   // Je charge la vue posts/index dans $content
 
   GLOBAL $content, $title;
+  
 ob_start();
 include '../app/vues/posts/index.php';
 $content = ob_get_clean();
 }
 
 function showAction (\PDO $connexion, int $id){
-  echo $id;
+  //Je mets dans mon $post les informations du post que je demande au modèle
+  include_once '../app/modeles/postsModele.php';
+  $post = PostsModele\findOneById($connexion, $id);
+
+  //Je charge la vue show dans $content
+  GLOBAL $content, $title;
+  $title = $post['title'];
+  ob_start();
+    include '../app/vues/posts/show.php';
+  $content = ob_get_clean();
 }
 
 

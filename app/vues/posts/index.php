@@ -36,12 +36,13 @@ Variables disponibles :
     </div>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae ut ratione similique temporibus tempora dicta soluta? Qui hic, voluptatem nemo quo corporis dignissimos voluptatum debitis cumque fugiat mollitia quasi quod. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae ut ratione similique...</p>
     <a href="?postId=<?php echo $post['id']; ?>" class="button button-style button-anim fa fa-long-arrow-right"><span>Read More</span></a>
+<?php endforeach; ?>
 </div>
 
 <!-- Blog Post End -->
 
 
-<?php endforeach; ?>
+
 
 
 
