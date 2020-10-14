@@ -15,6 +15,6 @@ RewriteEngine on
 
   # PATTERN: posts/{id}/{slug}
   # URL: index.php?postID=x
-    RewriteRule ^posts\/([1-9][0-9]*)\/([a-z0-9][a-z0-9\-]*)$ index.php?postID=$1 [L]
+    RewriteRule ^posts\/([1-9][0-9]*)\/([a-z0-9][a-z0-9\-]*).html$ index.php?postID=$1 [L]
 
 # --------------------------------------------------

@@ -3,8 +3,8 @@
 <head>
   <?php include '../app/vues/template/partials/_head.php'; ?>
 </head>
-<body> 
-  <?php echo $content; ?>
+<body>
+  
   <?php include '../app/vues/template/partials/_preloader.php'; ?>
     <?php include '../app/vues/template/partials/_main.php'; ?>
 <?php include '../app/vues/template/partials/_backToTop.php'; ?>

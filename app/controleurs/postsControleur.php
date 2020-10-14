@@ -22,7 +22,9 @@ include '../app/vues/posts/index.php';
 $content = ob_get_clean();
 }
 
-
+function showAction (\PDO $connexion, int $id){
+  echo $id;
+}
 
 
 
