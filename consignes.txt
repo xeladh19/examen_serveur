@@ -30,17 +30,21 @@ ROUTES
 		ACTION: ???
 		TITLE: Alex Parker - Blog
 
-	ROUTE DU DETAIL D'UN POST
+	vvvvvvvvvROUTE DU DETAIL D'UN POST
 			PATTERN: /posts/id/slug-du-post.html
 			CTRL: ???
 			ACTION: ???
 			TITLE: Alex Parker - Title du post
 
-	ROUTE D'AJOUT D'UN POST: affichage du formulaire
+
+
+vvvvvvvv	ROUTE D'AJOUT D'UN POST: affichage du formulaire
 			PATTERN: /posts/add/form.html
 			CTRL: ???
 			ACTION: ???
 			TITLE: Alex Parker - Add a post
+
+
 
 	ROUTE D'AJOUT D'UN POST: INSERT
 			PATTERN: /posts/add/insert.html

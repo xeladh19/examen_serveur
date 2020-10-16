@@ -17,12 +17,19 @@ function indexAction (\PDO $connexion) {
   // Je charge la vue posts/index dans $content
 
   GLOBAL $content, $title;
-  
+
 ob_start();
 include '../app/vues/posts/index.php';
 $content = ob_get_clean();
 }
 
+
+/**
+ * [showAction description]
+ * @param  PDO    $connexion [description]
+ * @param  int    $id        [description]
+ * @return [type]            [description]
+ */
 function showAction (\PDO $connexion, int $id){
   //Je mets dans mon $post les informations du post que je demande au modèle
   include_once '../app/modeles/postsModele.php';
@@ -36,6 +43,22 @@ function showAction (\PDO $connexion, int $id){
   $content = ob_get_clean();
 }
 
+
+/**
+ * [addFormAction description]
+ * @param PDO $connexion [description]
+ */
+function addFormAction(\PDO $connexion){
+  //Je vais chercher les catégories
+  include_once '../app/modeles/categoriesModele.php';
+  $categories = \App\Modeles\CategoriesModele\findAll($connexion);
+  //Je charge la vue addForm dans $content
+  GLOBAL $content, $title;
+  $title= POSTS_ADDFORM_TITLE;
+ob_start();
+include '../app/vues/posts/addForm.php';
+$content = ob_get_clean();
+}
 
 
 

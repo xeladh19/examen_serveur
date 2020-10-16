@@ -18,3 +18,12 @@ RewriteEngine on
     RewriteRule ^posts\/([1-9][0-9]*)\/([a-z0-9][a-z0-9\-]*).html$ index.php?postID=$1 [L]
 
 # --------------------------------------------------
+# AJOUT D'UN POST: affichage du formulaire
+# --------------------------------------------------
+
+    # PATTERN: /posts/add/form.html
+    # FROM : posts/Add/form
+    # To index.php?posts=addForm
+
+RewriteRule ^posts\/add\/form.html$ index.php?posts=addForm [L]
+          # --------------------------------------------------

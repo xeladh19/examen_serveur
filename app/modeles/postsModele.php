@@ -30,6 +30,7 @@ function findOneById(\PDO $connexion , int $id) :array {
   $sql = "SELECT *
           FROM posts
           WHERE id = :id;";
+
   $rs = $connexion->prepare($sql);
   $rs->bindValue (':id', $id, \PDO::PARAM_INT);
   $rs->execute();
@@ -37,21 +38,5 @@ function findOneById(\PDO $connexion , int $id) :array {
 }
 
 
-//
-//  function findAll (PDO $connexion){
-//  //   return[
-//  //   ['nom' => "Produit 1" , 'prix'=>89.50],
-//  //   ['nom' => "Produit 2", 'prix' => 99.50],
-//  // ];
-//  $sql = "SELECT *
-//  FROM produits
-//  ORDER BY nom ASC;";
-//
-//   $rs = $connexion->query($sql);
-//
-// $produits = $rs->fetchAll(PDO::FETCH_ASSOC);
-// $rs->closecursos();
-// unset($rs);
-// return $produits;
-//  }
+
 ?>
