@@ -48,13 +48,14 @@ function showAction (\PDO $connexion, int $id){
  * [addFormAction description]
  * @param PDO $connexion [description]
  */
+
 function addFormAction(\PDO $connexion){
   //Je vais chercher les catégories
   include_once '../app/modeles/categoriesModele.php';
   $categories = \App\Modeles\CategoriesModele\findAll($connexion);
   //Je charge la vue addForm dans $content
   GLOBAL $content, $title;
-  $title= POSTS_ADDFORM_TITLE;
+  $title = POSTS_ADDFORM_TITLE;
 ob_start();
 include '../app/vues/posts/addForm.php';
 $content = ob_get_clean();

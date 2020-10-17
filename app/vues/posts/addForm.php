@@ -23,7 +23,7 @@
     <!-- Post Headline End -->
 
     <!-- Form Start -->
-    <form action="">
+    <form action="posts/add/insert.html" method="post">
       <div class="form-group">
         <label for="title">Title</label>
         <input type="text" name="title" id="title" class="form-control" placeholder="Enter your title here" />
@@ -41,7 +41,7 @@
         <select id="category" name="category_id" class="form-control">
           <option disabled selected>Select your category</option>
 
-          <?php foreach ($categories as $key => $category): ?>
+          <?php foreach ($categories as $category): ?>
             <option value="<?php echo $category['id']; ?>"><?php echo $category['name']; ?></option>
           <?php endforeach; ?>
 

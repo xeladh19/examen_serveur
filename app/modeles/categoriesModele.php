@@ -1,18 +1,17 @@
 <?php
 /*
-./app/modeles/$categoriesModele.php
+./app/modeles/categoriesModele.php
 Modele des categories
 */
 namespace App\Modeles\CategoriesModele;
 
-
-
 /**
  * [findAll description]
- * @param  PDO   $connexion [description]
- * @return array            [description]
+ * @param  PDO    $connexion [description]
+ * @return [type]            [description]
  */
-function findAll(\PDO $connexion) :array {
+
+function findAll(\PDO $connexion){
 
   $sql = "SELECT *
           FROM categories

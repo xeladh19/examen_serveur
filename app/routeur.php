@@ -19,7 +19,8 @@ if (isset($_GET['postId'])):
 
 
 
-
+  elseif (isset($_GET['posts'])):
+     include '../app/routeurs/postsRouteur.php';
 
 
 
@@ -32,7 +33,7 @@ if (isset($_GET['postId'])):
 // CTRL: postsControleur
 // ACTION: index
 //
-// 
+//
 else:
 include_once '../app/controleurs/postsControleur.php';
 \App\Controleurs\PostsControleur\indexAction($connexion);
