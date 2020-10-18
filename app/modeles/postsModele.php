@@ -16,9 +16,9 @@ function findAll(\PDO $connexion){
           c.id as categorieId,
           c.name as categorieName,
           p.created_at as postDate
-          FROM posts
+          FROM posts p
           JOIN categories c on p.category_id = c.id
-          ORDER BY created_at DESC
+          ORDER BY p.created_at DESC
           LIMIT 10;";
   $rs = $connexion->query($sql);
   return $rs->fetchAll(\PDO::FETCH_ASSOC);
@@ -37,8 +37,9 @@ function findOneById(\PDO $connexion , int $id) :array {
           c.id as categorieId,
           c.name as categorieName,
           p.created_at as postDate
-          FROM posts
-          WHERE id = :id;";
+          FROM posts p
+          JOIN categories c on p.category_id = c.id
+          WHERE p.id = :id;";
 
   $rs = $connexion->prepare($sql);
   $rs->bindValue (':id', $id, \PDO::PARAM_INT);
@@ -53,7 +54,7 @@ function findOneById(\PDO $connexion , int $id) :array {
  * @param  array $data      [description]
  * @return int              [description]
  */
-function insertOne(\PDO $connexion, array $data) :int {
+function insert(\PDO $connexion, array $data) :int {
   $sql = "INSERT INTO posts
           SET title = :title,
               text = :text,

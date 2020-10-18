@@ -29,9 +29,9 @@ switch ($_GET['posts']):
   PostsControleur\addFormAction($connexion);
   break;
 
-  case 'add':
+  case 'addInsert':
   // AJOUT D'UN POST: insert
-  // PATTERN: index.php?posts=addInsert
+  // PATTERN: index.php?posts=add
   // CTRL: postsControleur
   // ACTION: addInsert
 PostsControleur\addAction($connexion);
@@ -39,10 +39,10 @@ PostsControleur\addAction($connexion);
 
 
   case 'delete':
-  // AJOUT D'UN POST: insert
-  // PATTERN: index.php?posts=addInsert
+  // SUPPRESSION D'UN POST
+  // PATTERN: index.php?posts=delete&id=x
   // CTRL: postsControleur
-  // ACTION: addInsert
+  // ACTION: delete
 PostsControleur\deleteAction($connexion, $_GET['id']);
   break;
 

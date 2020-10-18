@@ -24,19 +24,54 @@ Variables disponibles :
 
   <!-- Blog Post Start -->
 
-  <div class="col-md-12 blog-post">
 
     <?php foreach ($posts as $post):?>
+      <div class="col-md-12 blog-post">
+
+
+
+
 
     <div class="post-title">
-      <a href="?postId=<?php echo $post ['id']; ?>"><h1><?php echo $post ['title']; ?></h1></a>
+
+
+
+      <a href="posts/<?php echo $post['postId']; ?>/<?php echo \Noyau\Fonctions\slugify($post['title']); ?>.html"><h1><?php echo $post['title']; ?></h1></a>
+
+
     </div>
+
+
+
     <div class="post-info">
-      <span><?php echo date('Y\-m\-d', strtotime($post['created_at'])); ?></span> | <span>Life style</span>
+
+
+
+      <span> <?php echo Noyau\Fonctions\datify($post['postDate'],'Y\-m\-d'); ?> </span> | <span><?php echo $post['categorieName']; ?></span>
+
+      </div>
+
+
+
     </div>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae ut ratione similique temporibus tempora dicta soluta? Qui hic, voluptatem nemo quo corporis dignissimos voluptatum debitis cumque fugiat mollitia quasi quod. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae ut ratione similique...</p>
-    <a href="?postId=<?php echo $post['id']; ?>" class="button button-style button-anim fa fa-long-arrow-right"><span>Read More</span></a>
+
+
+    <p><?php echo \Noyau\Fonctions\tronquer($post['text'], 150); ?></p>
+
+
+
+
+
+    <a href="posts/<?php echo $post['postId']; ?>/<?php echo \Noyau\Fonctions\slugify($post['title']); ?>.html" class="button button-style button-anim fa fa-long-arrow-right"><span>Read More</span></a>
+
+
+
+
+
+
+
 <?php endforeach; ?>
+
 </div>
 
 <!-- Blog Post End -->
@@ -47,5 +82,3 @@ Variables disponibles :
 
 
          </div>
-
-     </div>
