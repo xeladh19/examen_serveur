@@ -46,18 +46,22 @@ PostsControleur\addAction($connexion);
 PostsControleur\deleteAction($connexion, $_GET['id']);
   break;
 
+case 'editForm':
+//EDITION D'UN POST: FORM
+//PATTERN: index.php?posts=editForm
+//CTRL: postsControleur
+//ACTION: editForm
+PostsControleur\editFormAction($connexion, $_GET['id']);
+   break;
 
 
-
-
-
-
-
-
-
-
-
-
+case 'edit':
+      // EDITION D'UN POSTS: UPDATE
+      // PATTERN: index.php?posts=edit&id=x
+      // CTRL: postsControleur
+      // ACTION: edit
+         PostsControleur\editAction($connexion, $_GET['id']);
+      break;
 
 
 

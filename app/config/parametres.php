@@ -14,3 +14,4 @@ $title ='';
 
 //FORMULAIRE
 define('POSTS_ADDFORM_TITLE', "Add a post");
+define('POSTS_EDITFORM_TITLE', "Edit a post");

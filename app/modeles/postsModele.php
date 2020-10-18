@@ -70,10 +70,41 @@ function insert(\PDO $connexion, array $data) :int {
                return $connexion->lastInsertId();
 }
 
+
+/**
+ * [deleteOneById description]
+ * @param  PDO  $connexion [description]
+ * @param  int  $id        [description]
+ * @return bool            [description]
+ */
 function deleteOneById(\PDO $connexion, int $id) :bool {
    $sql = "DELETE FROM posts
            WHERE id = :id;";
    $rs = $connexion->prepare($sql);
+   $rs->bindValue(':id', $id, \PDO::PARAM_INT);
+   return intval($rs->execute());
+}
+
+/**
+ * [updateOneById description]
+ * @param  PDO   $connexion [description]
+ * @param  int   $id        [description]
+ * @param  array $data      [description]
+ * @return bool             [description]
+ */
+function updateOneById(\PDO $connexion, int $id, array $data) :bool {
+   $sql = "UPDATE posts
+   SET title        = :title,
+   text         = :text,
+   quote        = :quote,
+   category_id = :category
+   WHERE id         = :id;";
+
+   $rs = $connexion->prepare($sql);
+   $rs->bindValue(':title', $data['title'], \PDO::PARAM_STR);
+   $rs->bindValue(':text', $data['text'], \PDO::PARAM_STR);
+   $rs->bindValue(':quote', $data['quote'], \PDO::PARAM_STR);
+   $rs->bindValue(':category', $data['category_id'], \PDO::PARAM_INT);
    $rs->bindValue(':id', $id, \PDO::PARAM_INT);
    return intval($rs->execute());
 }

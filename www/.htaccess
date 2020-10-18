@@ -23,7 +23,7 @@ RewriteEngine on
 
     # PATTERN: /posts/add/form.html
     # FROM : posts/Add/form
-    # To index.php?posts=addForm
+    # TO index.php?posts=addForm
 
 RewriteRule ^posts\/add\/form.html$ index.php?posts=addForm [L]
 # --------------------------------------------------
@@ -34,7 +34,7 @@ RewriteRule ^posts\/add\/form.html$ index.php?posts=addForm [L]
 
               #PATTERN: /posts/add/insert.html
               #FROM posts/add/insert
-              #URL: index.php?posts=addInsert
+              #TO index.php?posts=addInsert
               #PAS DE TITLE CAR REDIRECTION VERS LA PAGE D'ACCUEIL
     RewriteRule ^posts\/add\/insert.html$ index.php?posts=addInsert [L]
 
@@ -42,6 +42,46 @@ RewriteRule ^posts\/add\/form.html$ index.php?posts=addForm [L]
     #    ROUTE DE SUPPRESSION D'UN POST:
     # --------------------------------------------------
             #PATTERN: /posts/id/slug-du-post/delete.html
-            # URL: index.php?posts=delete&id=x
+            #TO index.php?posts=delete&id=x
             #PAS DE TITLE CAR REDIRECTION VERS LA PAGE D'ACCUEIL
     RewriteRule ^posts\/([1-9][0-9]*)\/([a-z0-9][a-z0-9\-]*)\/delete.html$ index.php?posts=delete&id=$1 [L]
+
+# --------------------------------------------------
+
+
+# --------------------------------------------------
+#   ROUTE DE MODIFICATION D'UN POST: Affichage du formulaire
+# --------------------------------------------------
+        #PATTERN: /posts/id/slug-du-post/edit/form.html
+        #TO index.php?posts=editForm&id=x
+        #FROM posts/xxx/edit/form
+        #TITLE: Alex Parker - Edit a post
+    RewriteRule ^posts\/([1-9][0-9]*)\/([a-z0-9][a-z0-9\-]*)\/edit\/form.html$ index.php?posts=editForm&id=$1 [L]
+# --------------------------------------------------
+
+
+# --------------------------------------------------
+#     ROUTE DE MODIFICATION D'UN POST: UPDATE
+# --------------------------------------------------
+        #PATTERN: /posts/id/slug-du-post/edit/update.html
+        #TO index.php?posts=editForm&id=x
+        #PAS DE TITLE CAR REDIRECTION VERS LA PAGE DE DETAILS DU POST
+RewriteRule ^posts\/([1-9][0-9]*)\/([a-z0-9][a-z0-9\-]*)\/edit\/update.html$ index.php?posts=edit&id=$1 [L]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# --------------------------------------------------
+
+    RewriteCond %{REQUEST_URI} !\.(js|css|jpg|gif|zip|png|pdf)$ [NC]
+    RewriteRule ^(.*)$ index.php [L]
