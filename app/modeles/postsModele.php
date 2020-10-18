@@ -26,11 +26,6 @@ function findAll(\PDO $connexion){
 
 
 
-
-
-
-
-
 /**
  * [findOneById description]
  * @param  PDO   $connexion [description]

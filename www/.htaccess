@@ -38,11 +38,10 @@ RewriteRule ^posts\/add\/form.html$ index.php?posts=addForm [L]
               #PAS DE TITLE CAR REDIRECTION VERS LA PAGE D'ACCUEIL
     RewriteRule ^posts\/add\/insert.html$ index.php?posts=addInsert [L]
 
-# --------------------------------------------------
-#    ROUTE DE SUPPRESSION D'UN POST:
-# --------------------------------------------------
-        #PATTERN: /posts/id/slug-du-post/delete.html
-        #FROM posts/www/delete
-        # URL: index.php?posts=delete&id=x
-        PAS DE TITLE CAR REDIRECTION VERS LA PAGE D'ACCUEIL
-RewriteRule ^posts\/([1-9][0-9]*)\/([a-z0-9][a-z0-9\-]*)\/delete.html$ index.php?posts=delete&id=$1 [L]
+    # --------------------------------------------------
+    #    ROUTE DE SUPPRESSION D'UN POST:
+    # --------------------------------------------------
+            #PATTERN: /posts/id/slug-du-post/delete.html
+            # URL: index.php?posts=delete&id=x
+            #PAS DE TITLE CAR REDIRECTION VERS LA PAGE D'ACCUEIL
+    RewriteRule ^posts\/([1-9][0-9]*)\/([a-z0-9][a-z0-9\-]*)\/delete.html$ index.php?posts=delete&id=$1 [L]
