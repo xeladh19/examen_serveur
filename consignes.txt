@@ -46,7 +46,7 @@ vvvvvvvv	ROUTE D'AJOUT D'UN POST: affichage du formulaire
 
 
 
-	ROUTE D'AJOUT D'UN POST: INSERT
+	vvvvvvROUTE D'AJOUT D'UN POST: INSERT
 			PATTERN: /posts/add/insert.html
 			CTRL: ???
 			ACTION: ???
@@ -66,6 +66,5 @@ vvvvvvvv	ROUTE D'AJOUT D'UN POST: affichage du formulaire
 
 	ROUTE DE SUPPRESSION D'UN POST:
 			PATTERN: /posts/id/slug-du-post/delete.html
-			CTRL: ???
-			ACTION: ???
+
 			PAS DE TITLE CAR REDIRECTION VERS LA PAGE D'ACCUEIL

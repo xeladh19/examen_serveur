@@ -62,42 +62,29 @@ $content = ob_get_clean();
 }
 
 
+/**
+ * [addAction description]
+ * @param PDO $connexion [description]
+ */
+function addAction(\PDO $connexion) {
+   // Je demande au modèle d'ajouter un post
+   include_once '../app/modeles/postsModele.php';
+   $id = \App\Modeles\PostsModele\insert($connexion, $_POST);
+   // Je redirige vers la liste des posts
+   header('location: ' . BASE_URL);
+}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//
-// function indexAction(PDO $connexion){
-//   //Je demande au modele la liste des produits
-//     include_once'../app/modeles/produitsModele.php';
-//     $produits = findAll($connexion);
-//
-//   //Je charge la vue index dans $content
-//
-//   GLOBAL $content;
-//   ob_start();
-//     include '../app/vues/produits/index.php';
-//     $content = ob_get_clean();
-// }
- ?>
+/**
+ * [deleteAction description]
+ * @param  PDO    $connexion [description]
+ * @param  int    $id        [description]
+ * @return [type]            [description]
+ */
+function deleteAction (\PDO $connexion, int $id){
+  //Je demande au modèle de supprimer le post
+   include_once '../app/modeles/postsModele.php';
+   $return1 = PostsModele\deleteOneById($connexion, $id);
+  //Je redirige vers al liste des posts
+   header('location: ' . BASE_URL);
+}
